@@ -14,7 +14,7 @@ def dateExt(text):
     
     #pattern3= r'(\d{2}|\d)[^\w\d\r\n:](\w+)[^\w\d\r\n:](\d{4}|\d{2})'#working pattern
 
-    pattern3= r'\b(0?[1-9]|[12][0-9]|3[01])\b[^\w\d\r\n:](\w+)[^\w\d\r\n:](\d{4}|\d{2})' #we can also create list of patterns to match multiple format date
+    pattern3= r'\b(0?[1-9]|[12][0-9]|3[01])\b[^\w\d\r\n:](\w+)[^\w\d\r\n:](\d{4}|\d{2})' #we can also create list of patterns to match multiple date formats
     
     match = re.findall(pattern3,text)
     print("length",len(match)) #we can use len(match) to identify how many dates we got
