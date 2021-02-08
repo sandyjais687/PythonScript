@@ -12,9 +12,9 @@ def dateExt(text):
     #pattern2= r'(0?[1-9]|[12]\d|30|31)[^\w\d\r\n:](\w+)[^\w\d\r\n:](\d{4}|\d{2})'
     #pattern3= r'(\d{2})[^\w\d\r\n:](\w+)[^\w\d\r\n:](\d{4}|\d{2})'
     
-    pattern3= r'(\d{2})[^\w\d\r\n:](\w+)[^\w\d\r\n:](\d{4}|\d{2})'
+    pattern3= r'(\d{2}|\d)[^\w\d\r\n:](\w+)[^\w\d\r\n:](\d{4}|\d{2})'
     match = re.findall(pattern3,text)
-    
+    print("length",len(match))
     tup1=match[0]   #1st tuple from match list
     tup2=match[1]   #2nd tuple from match list
     tup1='/'.join(tup1) #converting to string by "/"
@@ -42,7 +42,7 @@ def dateExt(text):
 testData='''
 MANOJ MEDICAL & GENERAL STORES
 R-6/941/KAMDAR ROAD,LATUR,MOB-9370245680     ,,,,, LATUR
-Stock and sales Statement from : 31/3/2021 to 21 January 21
+Stock and sales Statement from : 31/3/2021 to 1 January 21
 Company : BERGEN ASTA Page : 1
 '''
 dateExt(testData)
