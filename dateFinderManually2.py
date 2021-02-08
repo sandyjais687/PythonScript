@@ -5,17 +5,9 @@ from datetime import date, datetime
 from date_extractor import extract_dates
 
 def dateExt(text):
-    #pattern = r'''"\d{2}"/"\d{2}"/"\d{4}"''' #and r"\d{2}:\d{2}:\d{1}"
-    #m = re.match(pattern, text)
-    #r'(\d{2}\S\[a-zA-Z]{3}\S\d{4})' #r'(\d{2}/\d{2}/\d{4})' and
-    #pattern= r'(0?[1-9]|[12]\d|30|31)[^\w\d\r\n:](0?[1-9]|1[0-2])[^\w\d\r\n:](\d{4}|\d{2})'
-    #pattern2= r'(0?[1-9]|[12]\d|30|31)[^\w\d\r\n:](\w+)[^\w\d\r\n:](\d{4}|\d{2})'
-    #pattern3= r'(\d{2})[^\w\d\r\n:](\w+)[^\w\d\r\n:](\d{4}|\d{2})'
-    
-    #pattern3= r'(\d{2}|\d)[^\w\d\r\n:](\w+)[^\w\d\r\n:](\d{4}|\d{2})'#working pattern
     mnth=["jan","fab","march"]
     pattern=r'\b(0?[1-9]|[12][0-9]|3[01])\b[^\w\d\r\n:](\w+)[^\w\d\r\n:](\d{4}|\d{2})'
-    pattern2=r"\b(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\b[^\w\d\r\n:](\d{4}|\d{2})"
+    #pattern2=r"\b(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\b[^\w\d\r\n:](\d{4}|\d{2})"
     #for i in pattern:
     match = re.findall(pattern,text)
     print("length",len(match)) #we can put if condition 
@@ -76,10 +68,9 @@ def dateExt(text):
         print("matching with 2nd pattern")
         print(dates)'''
 
-testData='''
-MANOJ MEDICAL & GENERAL STORES
-R-6/941/KAMDAR ROAD,LATUR,MOB-9370245680     ,,,,, LATUR
-Stock and sales Statement from :  to feb/21
-Company : BERGEN ASTA Page : 1
+testData='''N. CHIMANLAL & CO. PVT. LTD.								
+PAN No : AACCN2221P GSTIN No : 27AACCN2221P1ZD VAT TIN No : 27700506776V								
+Pending Credit/Debit Note List of 								
+M/s. M/S INDOCO REMEDIES LTD. (1009) (Upto Date : 05/02/2021)
 '''
 dateExt(testData)
