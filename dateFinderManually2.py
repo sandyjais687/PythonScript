@@ -57,12 +57,13 @@ def dateExt(text):
 
     if len(match)<=0:
         text=text.lower()
+        #pattern2=r"(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[^\w\d\r\n:](\d{4}|\d{2})"
         pattern2=r"(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)[^\w\d\r\n:](\d{4}|\d{2})"
         match = re.findall(pattern2,text)
         tup1=match[0]
         tup1='/'.join(tup1)
         
-        for frmt in ("%d/%m/%y","%d/%m/%Y","%d/%B/%Y","%d/%b/%Y","%d/%B/%y","%d/%b/%y","%m/%y","%b/%y","%B/%y","%m/%y","%b/%Y","%B/%Y"):
+        for frmt in ("%m/%y","%b/%y","%B/%y","%m/%y","%b/%Y","%B/%Y"):
             try:
                 date1 = datetime.strptime(tup1, frmt)
                 print("matching with 2nd pattern")
@@ -78,7 +79,7 @@ def dateExt(text):
 testData='''
 MANOJ MEDICAL & GENERAL STORES
 R-6/941/KAMDAR ROAD,LATUR,MOB-9370245680     ,,,,, LATUR
-Stock and sales Statement from :  to Jan/21
+Stock and sales Statement from :  to feb/21
 Company : BERGEN ASTA Page : 1
 '''
 dateExt(testData)
