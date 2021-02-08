@@ -17,7 +17,9 @@ def dateExt(text):
     pattern3= r'\b(0?[1-9]|[12][0-9]|3[01])\b[^\w\d\r\n:](\w+)[^\w\d\r\n:](\d{4}|\d{2})'
     
     match = re.findall(pattern3,text)
-    print("length",len(match))
+    print("length",len(match)) #we can use len(match) to identify how many dates we got
+    
+    #if len(match)==2:
     tup1=match[0]   #1st tuple from match list
     tup2=match[1]   #2nd tuple from match list
     tup1='/'.join(tup1) #converting to string by "/"
