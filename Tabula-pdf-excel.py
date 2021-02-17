@@ -3,6 +3,11 @@ from camelot.parsers import lattice
 import tabula
 import pandas as pd
 import os
+
+#pip install pandas
+#pip install camelot-py[cv]
+##pip install tabula-py
+
 file="f5.pdf"
 
 df_latt = tabula.read_pdf(file, pages='all', multiple_tables=True)
